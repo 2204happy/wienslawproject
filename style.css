@@ -21,7 +21,7 @@
 }
 #main {
   height: 100%;
-  width: 80%;
+  width: 60%;
   top: 0px;
   left: 20%;
   position: absolute;
@@ -49,8 +49,7 @@ table {
 table,tr,td,th {
   border: 1px solid black;
 }
-.formula {
-  font-size: 30px;
+formula {
   font-family: serif;
   font-style: italic;
 }
