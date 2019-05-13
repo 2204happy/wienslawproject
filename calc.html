@@ -16,15 +16,47 @@
 </ul>
 
 </div></div>
+
 <!--main content div as well as subdiv-->
 <div id="main"><div id="maininner">
 <h1>Wien's Law Calculator</h1>
 
-<input type="radio" name="conv" id="lentotemp">Convert Wavelength to Temperature<br>
-<input type="radio" name="conv" id="temptolen">Convert Temperature to Wavelength<br>
-<input type="number" id="num"> <formula id="convfrom">&lambda;<br>
-=
+<input type="submit" onclick="lentotemp()" value="Convert Wavelength to Temperature"><br><br>
+<input type="submit" onclick="temptolen()" value="Convert Temperature to Wavelength"><br><br>
+<input type="number" id="num"> <txt id="convfrom"> nm </txt><input type="submit" onclick="convert()" value="convert"><br>
+<p id="out"></p>
 </div></div>
-
+<script>
+//var value;
+var elemin = document.getElementById("num");
+var elemout = document.getElementById("out");
+var convfromelem = document.getElementById("convfrom");
+var toTemp = true;
+var tmp;
+function  lentotemp() {
+  toTemp = true;
+  convfromelem.innerHTML = " nm ";
+  convert();
+}
+function  temptolen() {
+  toTemp = false;
+  convfromelem.innerHTML = " &deg;K ";
+  convert();
+}
+function convert() {
+  tmp = elemin.value;
+  if(toTemp) {
+    tmp = tmp/1000000000;
+    tmp = 0.0029/tmp;
+    elemout.innerHTML = "= "+tmp+" &deg;K";
+  }
+  else {
+    tmp = 0.0029/tmp;
+    tmp = tmp*1000000000;
+    elemout.innerHTML = "="+tmp+" nm";
+  }
+  
+}
+</script>
 </body>
 </html>
