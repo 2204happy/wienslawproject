@@ -45,14 +45,12 @@ function  temptolen() {
 }
 function convert() {
   tmp = elemin.value;
+  tmp = 0.0029/tmp;
+  tmp = tmp*1000000000;
   if(toTemp) {
-    tmp = tmp/1000000000;
-    tmp = 0.0029/tmp;
     elemout.innerHTML = "= "+tmp+" &deg;K";
   }
   else {
-    tmp = 0.0029/tmp;
-    tmp = tmp*1000000000;
     elemout.innerHTML = "="+tmp+" nm";
   }
   
